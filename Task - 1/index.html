@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Blog</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>My Travel Blog</h1>
+    <p>Exploring the world, one city at a time.</p>
+  </header>
+
+  <nav>
+    <a href="#destinations">Destinations</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="destinations">
+    <h2>Top Destinations</h2>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&q=80" alt="Paris" />
+      <h3>Paris, France</h3>
+      <p>The city of lights, fashion, and the iconic Eiffel Tower.</p>
+      <button onclick="showInfo('Paris')">Learn More</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=80" alt="Tokyo" />
+      <h3>Tokyo, Japan</h3>
+      <p>A perfect blend of ancient temples and futuristic technology.</p>
+      <button onclick="showInfo('Tokyo')">Learn More</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=400&q=80" alt="Sydney" />
+      <h3>Sydney, Australia</h3>
+      <p>Famous for its Opera House, beaches, and vibrant culture.</p>
+      <button onclick="showInfo('Sydney')">Learn More</button>
+    </div>
+
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I am a passionate traveler who loves discovering new cultures, foods, and places around the globe.</p>
+    <button onclick="sayHello()">Say Hello</button>
+  </section>
+
+  <footer id="contact">
+    <p>Contact: sainivaibhav1409@gmail.com</p>
+    <p>&copy; 2026 My Travel Blog</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
