@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: #f5f0eb;
+  color: #333;
+}
+
+header {
+  background-color: #2c6e49;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #c8e6c9;
+}
+
+nav {
+  background-color: #1b4332;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 14px;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+nav a:hover {
+  color: white;
+}
+
+#destinations {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+#destinations h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #1b4332;
+  border-bottom: 2px solid #2c6e49;
+  padding-bottom: 8px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  padding: 16px 20px 6px;
+  color: #2c6e49;
+}
+
+.card p {
+  padding: 0 20px 16px;
+  color: #555;
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
+.card button {
+  margin: 0 20px 20px;
+  padding: 9px 22px;
+  background-color: #2c6e49;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.card button:hover {
+  background-color: #1b4332;
+}
+
+#about {
+  background-color: #d8f3dc;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#about h2 {
+  font-size: 1.8rem;
+  color: #1b4332;
+  margin-bottom: 14px;
+}
+
+#about p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+#about button {
+  padding: 10px 28px;
+  background-color: #2c6e49;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#about button:hover {
+  background-color: #1b4332;
+}
+
+footer {
+  background-color: #1b4332;
+  color: #aaa;
+  text-align: center;
+  padding: 24px;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
