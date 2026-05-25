@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizSpark</title>
+  <link rel="stylesheet" href="style3.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">Quiz<span>Spark</span></div>
+
+  <ul class="links" id="menu">
+    <li><a href="#quiz">Quiz</a></li>
+    <li><a href="#joke">Fun Corner</a></li>
+  </ul>
+
+  <button class="toggle" onclick="toggleMenu()">☰</button>
+</nav>
+
+<header class="hero">
+  <h1>Test Your Tech Knowledge</h1>
+  <p>5 questions. No time limit. How well do you know the web?</p>
+</header>
+
+<main class="wrap">
+
+<section class="box" id="quiz">
+  <h2>Quick Quiz</h2>
+  <p class="sub">Choose the correct answer for each question.</p>
+
+  <div id="qbox">
+    <p id="qnum"></p>
+    <p id="qtxt"></p>
+
+    <div id="opts"></div>
+
+    <p id="qmsg"></p>
+
+    <button id="nbtn" onclick="nextQ()" style="display:none;">
+      Next →
+    </button>
+  </div>
+
+  <div id="result" style="display:none;">
+    <h3 id="score"></h3>
+    <p id="remark"></p>
+    <button onclick="restart()">Try Again</button>
+  </div>
+</section>
+
+<section class="box" id="joke">
+  <h2>Fun Corner</h2>
+  <p class="sub">
+    Fetching a fresh programming joke from the web using JavaScript.
+  </p>
+
+  <div id="jokebox">
+    <p id="joketxt">Click the button to load a joke!</p>
+  </div>
+
+  <button class="fbtn" onclick="fetchJoke()">
+    Get a Joke 😂
+  </button>
+
+  <p id="jloading"></p>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 QuizSpark — Keep learning, keep growing.</p>
+</footer>
+
+<script src="script3.js"></script>
+</body>
+</html>
