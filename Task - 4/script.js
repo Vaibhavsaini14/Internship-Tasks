@@ -2,7 +2,7 @@ function toggleNav() {
   document.getElementById('navmenu').classList.toggle('open');
 }
 
-var roles = ['Web Developer', 'DSA Enthusiast', 'Frontend Developer', 'CSE Student', 'Problem Solver'];
+var roles = ['Web Developer', 'DSA Enthusiast', 'Aspiring Data Analyst', 'CSE Student', 'Problem Solver'];
 var ri = 0, ci = 0, del = false;
 var typer = document.getElementById('typer');
 
