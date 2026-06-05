@@ -33,7 +33,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAV ── */
 .nav {
   display: flex;
   align-items: center;
@@ -107,7 +106,6 @@ body {
   cursor: pointer;
 }
 
-/* ── HERO ── */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -118,7 +116,6 @@ body {
   background: var(--bg);
 }
 
-/* subtle dot grid background */
 .hero-bg-grid {
   position: absolute;
   inset: 0;
@@ -146,7 +143,6 @@ body {
   max-width: 1200px;
 }
 
-/* CODE BLOCK */
 .code-block {
   background: #282c34;
   border: 1px solid rgba(97,175,239,0.18);
@@ -209,7 +205,6 @@ body {
   user-select: none;
 }
 
-/* syntax colours — One Dark Pro */
 .cm  { color: #5c6370; font-style: italic; }
 .kw  { color: #c678dd; }
 .va  { color: #e06c75; }
@@ -241,7 +236,6 @@ body {
 .arrow { color: #636d83; }
 .out-text { color: #98c379; }
 
-/* CTA ROW */
 .hero-cta-row {
   display: flex;
   align-items: center;
@@ -306,7 +300,6 @@ body {
   background: rgba(97,175,239,0.06);
 }
 
-/* HERO RIGHT — PHOTO */
 .hero-right {
   display: flex;
   justify-content: center;
@@ -376,7 +369,6 @@ body {
 .chip-lc { bottom: 40px; left: -40px; }
 .chip-gpa { bottom: -14px; right: -20px; }
 
-/* KEEP .btn for other sections */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -404,7 +396,6 @@ body {
 
 .ghost:hover { background: rgba(97, 175, 239, 0.08); }
 
-/* ── SECTIONS ── */
 .sec {
   padding: 100px 6%;
   position: relative;
@@ -449,7 +440,6 @@ body {
   margin-bottom: 36px;
 }
 
-/* ── ABOUT ── */
 .about-wrap { max-width: 900px; }
 
 .about-body p {
@@ -478,7 +468,6 @@ body {
   text-transform: uppercase;
 }
 
-/* ── SKILLS ── */
 .skills-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -517,7 +506,6 @@ body {
 
 .sk-pills.interest span { color: var(--gold); background: rgba(212, 168, 83, 0.06); }
 
-/* ── PROJECTS ── */
 .filter-row {
   display: flex;
   gap: 8px;
@@ -651,7 +639,6 @@ body {
 
 .plink:hover { color: var(--gold); }
 
-/* ── CERTIFICATIONS ── */
 .certs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -702,7 +689,6 @@ body {
   line-height: 1.65;
 }
 
-/* ── NOTES ── */
 .notes-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -776,7 +762,6 @@ body {
 
 #nlist li button:hover { background: var(--danger); color: white; }
 
-/* ── CONTACT ── */
 .contact-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -847,7 +832,6 @@ body {
 .cr-quote p { font-family: var(--font-d); font-style: italic; font-size: 0.97rem; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
 .cr-quote span { font-size: 0.73rem; color: var(--gold); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
 
-/* ── FOOTER ── */
 .foot {
   text-align: center;
   padding: 28px;
@@ -860,7 +844,6 @@ body {
 
 .foot span { color: var(--gold); font-weight: 600; }
 
-/* ── ANIMATIONS ── */
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 @keyframes fadeUp {
@@ -880,7 +863,7 @@ body {
 .hero-left > *:nth-child(6) { animation-delay: 0.36s; }
 .hero-left > *:nth-child(7) { animation-delay: 0.42s; }
 
-/* ── RESPONSIVE ── */
+
 @media (max-width: 960px) {
   .hero-inner { grid-template-columns: 1fr; gap: 50px; }
   .hero-right { justify-content: center; order: -1; }
@@ -921,7 +904,7 @@ body {
   .hero-nums { gap: 20px; }
 }
 
-/* ── CERT CARD EXTRAS ── */
+
 .cert-issuer {
   display: block;
   font-size: 0.68rem;
