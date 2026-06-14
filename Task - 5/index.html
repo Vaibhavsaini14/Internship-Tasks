@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upper 90 — Football Gear</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="#" class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="13" stroke="#0ea5e9" stroke-width="2"/>
+        <path d="M14 6 L14 22 M6 14 L22 14" stroke="#0ea5e9" stroke-width="1.2" opacity="0.5"/>
+        <circle cx="14" cy="14" r="3" fill="#0ea5e9"/>
+      </svg>
+      UPPER<span>90</span>
+    </a>
+    <div class="nav-mid">
+      <div class="search-wrap">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchbar" placeholder="Search jerseys, boots, sneakers..." onkeyup="searchProducts()" />
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="search-toggle" onclick="toggleMobSearch()" title="Search"><i class="fas fa-search"></i></button>
+      <button class="cart-btn" onclick="toggleCart()">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="ham" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+
+  <div class="mob-search-bar" id="mobSearchBar">
+    <div class="search-wrap">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" id="mobSearchInput" placeholder="Search jerseys, boots, sneakers..." onkeyup="mobSearch()" />
+    </div>
+  </div>
+
+  <ul class="mob-menu" id="mobmenu">
+    <li><a href="#shop" onclick="toggleNav()">Shop</a></li>
+    <li><a href="#about" onclick="toggleNav()">About</a></li>
+  </ul>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <p class="hero-tag">New Season Drop</p>
+      <h1 class="hero-title">Play Like<br /><span>You Mean It.</span></h1>
+      <p class="hero-sub">Official kits, elite boots, lifestyle sneakers and pro gear — all in one place.</p>
+      <a href="#shop" class="hero-btn"><i class="fas fa-bolt"></i> Shop Now</a>
+    </div>
+    <div class="hero-ball">
+      <svg viewBox="0 0 120 120" width="340" height="340" opacity="0.06">
+        <circle cx="60" cy="60" r="58" stroke="#0ea5e9" stroke-width="3" fill="none"/>
+        <polygon points="60,10 80,40 110,40 88,60 96,90 60,72 24,90 32,60 10,40 40,40" fill="#0ea5e9"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="shop-section" id="shop">
+    <div class="controls">
+      <div class="cat-tabs">
+        <button class="ctab active" onclick="setCat(this,'all')">All</button>
+        <button class="ctab" onclick="setCat(this,'jersey')">Jerseys</button>
+        <button class="ctab" onclick="setCat(this,'boots')">Boots</button>
+        <button class="ctab" onclick="setCat(this,'sneakers')">Sneakers</button>
+        <button class="ctab" onclick="setCat(this,'accessories')">Accessories</button>
+      </div>
+      <div class="right-controls">
+        <div class="brand-tabs">
+          <button class="btab active" onclick="setBrand(this,'all')">All Brands</button>
+          <button class="btab" onclick="setBrand(this,'nike')">Nike</button>
+          <button class="btab" onclick="setBrand(this,'adidas')">Adidas</button>
+          <button class="btab" onclick="setBrand(this,'puma')">Puma</button>
+          <button class="btab" onclick="setBrand(this,'newbalance')">New Balance</button>
+        </div>
+        <div class="price-filter">
+          <span>Price</span>
+          <button class="ptab active" onclick="setPrice(this,'all')">All</button>
+          <button class="ptab" onclick="setPrice(this,'under3000')">Under ₹3k</button>
+          <button class="ptab" onclick="setPrice(this,'3to6')">₹3k–6k</button>
+          <button class="ptab" onclick="setPrice(this,'above6')">₹6k+</button>
+        </div>
+        <select id="sorter" onchange="renderProducts()">
+          <option value="default">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+    </div>
+    <p class="result-count" id="resCount"></p>
+    <div class="pgrid" id="pgrid"></div>
+  </section>
+
+
+  <section class="wishlist-section" id="wishlistSection">
+    <div class="wl-head">
+      <h2>&#10084; Saved Items</h2>
+      <span class="wl-count" id="wlCount">0</span>
+    </div>
+    <div class="pgrid" id="wlGrid"></div>
+  </section>
+
+  
+  <section class="recent-section" id="recentSection">
+    <div class="recent-head">
+      <h2>Recently Viewed</h2>
+    </div>
+    <div class="recent-row" id="recentRow"></div>
+  </section>
+
+  <section class="about-strip" id="about">
+    <div class="strip-item">
+      <div class="strip-icon"><i class="fas fa-shield-halved"></i></div>
+      <div class="strip-text"><strong>Official Licensed Gear</strong><span>100% authentic products</span></div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-icon"><i class="fas fa-truck-fast"></i></div>
+      <div class="strip-text"><strong>Free Delivery Over ₹2999</strong><span>Pan India shipping</span></div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-icon"><i class="fas fa-rotate-left"></i></div>
+      <div class="strip-text"><strong>Easy 30-Day Returns</strong><span>Hassle-free policy</span></div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-icon"><i class="fas fa-lock"></i></div>
+      <div class="strip-text"><strong>Secure Checkout</strong><span>SSL encrypted payments</span></div>
+    </div>
+  </section>
+
+  
+  <div class="toast-container" id="toastContainer"></div>
+
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-head">
+      <h3>Your Cart <span id="cartCountSide">0</span></h3>
+      <button onclick="toggleCart()" class="cart-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot" id="cartFoot" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+      <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
+    </div>
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fas fa-shopping-bag"></i>
+      <p>Your cart is empty</p>
+    </div>
+  </aside>
+
+  
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-head">
+        <h3>Checkout</h3>
+        <button onclick="closeCheckout()" class="modal-close"><i class="fas fa-times"></i></button>
+      </div>
+      <form id="checkForm" onsubmit="validateCheckout(event)" novalidate>
+        <div class="mfg"><label>Full Name</label><input type="text" id="fname" /><span class="merr" id="fe1"></span></div>
+        <div class="mfg"><label>Email Address</label><input type="email" id="femail" /><span class="merr" id="fe2"></span></div>
+        <div class="mfg"><label>Phone Number</label><input type="tel" id="fphone" /><span class="merr" id="fe3"></span></div>
+        <div class="mfg"><label>Delivery Address</label><textarea id="faddress" rows="2"></textarea><span class="merr" id="fe4"></span></div>
+        <div class="mfg-row">
+          <div class="mfg"><label>City</label><input type="text" id="fcity" /><span class="merr" id="fe5"></span></div>
+          <div class="mfg"><label>Pincode</label><input type="text" id="fpin" /><span class="merr" id="fe6"></span></div>
+        </div>
+        <div class="modal-order-total">Order Total: <strong id="modalTotal">₹0</strong></div>
+        <button type="submit" class="place-btn">Place Order</button>
+        <p class="order-ok" id="orderOk"></p>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="pd-modal-overlay" id="pdOverlay">
+    <div class="pd-modal" id="pdModal">
+      <button class="pd-close" onclick="closePD()"><i class="fas fa-times"></i></button>
+      <img class="pd-img" id="pdImg" src="" alt="" />
+      <div class="pd-body">
+        <p class="pd-brand" id="pdBrand"></p>
+        <h2 class="pd-name" id="pdName"></h2>
+        <div class="pd-meta">
+          <span class="pd-price" id="pdPrice"></span>
+          <span class="pd-rating"><span class="star">★</span> <span id="pdRating"></span></span>
+        </div>
+        <p class="pd-desc" id="pdDesc"></p>
+        <p class="pd-size-label">Select Size</p>
+        <div class="pd-sizes" id="pdSizes"></div>
+        <div class="pd-actions">
+          <button class="pd-add-btn" id="pdAddBtn" onclick="pdAddToCart()"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+          <button class="pd-wish-btn" id="pdWishBtn" onclick="pdToggleWish()"><i class="fas fa-heart"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <div class="foot-logo">UPPER<span>90</span></div>
+        <p>Premium football gear for players who aim for the top corner. Official kits, elite boots, and lifestyle sneakers — all in one place.</p>
+        <div class="foot-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Jerseys</a></li>
+          <li><a href="#">Football Boots</a></li>
+          <li><a href="#">Sneakers</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Affiliates</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-copy">&copy; 2026 Upper 90. All rights reserved.</p>
+      <div class="foot-bottom-right">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
